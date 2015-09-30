@@ -7,6 +7,6 @@ abstract class Controller
 
 	public function __construct($app)
 	{
-		$this->app();
+		$this->app = $app;
 	}
 }
