@@ -11,7 +11,7 @@ class App {
 		} 
 	}
 
-	public static function getInstance()
+	public static function instance()
 	{
 		return static::$app;
 	}
