@@ -18,16 +18,7 @@ class Tetra extends Slim
 				throw new \Exception("No Method Specified.");
 			}
 
-			$depends = $class::$depends;
-			$depends = array_flip($depends);
-
-			foreach ($depends as $key => &$value) {
-				$value = $this->container->get($key);
-			}
-
-			$obj = new $class($depends);
-
-			$obj->setApp($this);
+			$obj = new $class($this);
 
 			return function() use ($obj, $method) {
 				call_user_func_array([

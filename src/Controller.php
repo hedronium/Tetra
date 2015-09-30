@@ -3,5 +3,10 @@ namespace hedronium\Tetra;
 
 abstract class Controller 
 {
-	use resolvable;
+	private $app = null;
+
+	public function __construct($app)
+	{
+		$this->app();
+	}
 }
