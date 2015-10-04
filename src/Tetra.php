@@ -18,9 +18,9 @@ class Tetra extends Slim
 				throw new \Exception("No Method Specified.");
 			}
 
-			$obj = new $class($this);
+			return function() use ($class, $method) {
+				$obj = new $class($this);
 
-			return function() use ($obj, $method) {
 				call_user_func_array([
 					$obj,
 					$method
